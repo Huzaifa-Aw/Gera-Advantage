@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<pages:PopupPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
+    x:Class="GeraAdvantage.Views.SearchMultipleDialoge">
+    <StackLayout
+        VerticalOptions="Center"
+        HorizontalOptions="FillAndExpand"
+        BackgroundColor="White"
+        Margin="30,0,30,0">
+        <StackLayout
+            Style="{StaticResource DialogePage}">
+            <Label
+                Text="Select Option"
+                Style="{StaticResource DialogeTitle}" />
+        </StackLayout>
+        <StackLayout
+            Orientation="Horizontal"
+            HorizontalOptions="FillAndExpand">
+            <Entry
+                x:Name="EntSearch"
+                Placeholder="enter search text."
+                Style="{StaticResource DialogeEntry}"
+                ClearButtonVisibility="WhileEditing" />
+            <ImageButton
+                Source="bsearch.png"
+                Style="{StaticResource DialogeImage}"
+                Clicked="Search_Clicked" />
+        </StackLayout>
+        <ListView
+            x:Name="listView"
+            Style="{StaticResource ListviewStyle}"
+            BackgroundColor="White"
+            SelectionMode="None"
+            VerticalOptions="Start"
+            HeightRequest="220"
+            ItemTapped="listView_ItemTapped">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell
+                        Height="50">
+                        <StackLayout
+                            HorizontalOptions="FillAndExpand"
+                            Orientation="Horizontal">
+                            <CheckBox
+                                Style="{StaticResource Chkbox}"
+                                IsChecked="{Binding IsChecked}"
+                                IsEnabled="False"/>
+                            <Label
+                                Text="{Binding Title}"
+                                Style="{StaticResource DialogeListLabel}" />
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <Grid
+            ColumnDefinitions="*,*"
+            HorizontalOptions="FillAndExpand"
+            VerticalOptions="StartAndExpand">
+            <Button
+                Grid.Column="0"
+                Text="Save"
+                Clicked="BtnSave_Clicked"/>
+            <Button
+                Grid.Column="1"
+                Text="Cancel"
+                Clicked="BtnCancel_Clicked"/>
+        </Grid>
+        
+    </StackLayout>
+</pages:PopupPage>

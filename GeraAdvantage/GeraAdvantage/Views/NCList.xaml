@@ -1,0 +1,161 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="GeraAdvantage.Views.NCList"
+    Title="Project Title"
+    Style="{StaticResource ContentPageStyle}">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem
+            Order="Primary"
+            IconImageSource="refresh.png" />
+        <ToolbarItem
+            Order="Primary"
+            IconImageSource="
+            
+            .png" />
+        <ToolbarItem
+            Order="Primary"
+            IconImageSource="home.png" />
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <StackLayout>
+            <Label
+                Text="Project Name"
+                FontAttributes="Bold"
+                FontSize="Large"
+                HorizontalOptions="Start"
+                Margin="15,4,0,4" />
+            <ListView
+                x:Name="listView"
+                Style="{StaticResource ListviewStyle}"
+                BackgroundColor="White"
+                SelectionMode="None"
+                ItemTapped="ListView_ItemTapped">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout
+                                Padding="15,15,5,5"
+                                Orientation="Horizontal">
+                                <StackLayout
+                                    HorizontalOptions="StartAndExpand"
+                                    VerticalOptions="CenterAndExpand"
+                                    Orientation="Vertical"
+                                    Spacing="0">
+                                    <Label
+                                        Text="{Binding Title}"
+                                        Style="{StaticResource NCListTitleLabel}" />
+                                    <Label
+                                        Text="{Binding Floor}"
+                                        Style="{StaticResource NCListHeaderLabel}" />
+                                    <StackLayout
+                                        HorizontalOptions="StartAndExpand"
+                                        VerticalOptions="CenterAndExpand"
+                                        Orientation="Horizontal">
+                                        <Label
+                                            Text="Category: "
+                                            Style="{StaticResource NCListLabel}"
+                                            FontSize="Medium" />
+                                        <Label
+                                            Text="{Binding Category}"
+                                            FontSize="Medium"
+                                            VerticalOptions="Center" />
+                                    </StackLayout>
+                                    <StackLayout
+                                        HorizontalOptions="StartAndExpand"
+                                        VerticalOptions="CenterAndExpand"
+                                        Orientation="Horizontal">
+                                        <Label
+                                            Text="Created By: -"
+                                            Style="{StaticResource NCListLabel}" />
+                                        <Label
+                                            Text="{Binding CreatedBy}"
+                                            Style="{StaticResource NCListLabel}" />
+                                    </StackLayout>
+                                    <StackLayout
+                                        HorizontalOptions="StartAndExpand"
+                                        VerticalOptions="CenterAndExpand"
+                                        Orientation="Horizontal">
+                                        <Label
+                                            Text="Updated By: -"
+                                            Style="{StaticResource NCListLabel}" />
+                                        <Label
+                                            Text="{Binding UpdatedBy}"
+                                            Style="{StaticResource NCListLabel}" />
+                                    </StackLayout>
+                                    <Label
+                                        Text="{Binding ProjDate}"
+                                        Style="{StaticResource NCListLabel}" />
+                                </StackLayout>
+                                <StackLayout
+                                    Padding="0,15,0,0"
+                                    HorizontalOptions="End"
+                                    VerticalOptions="FillAndExpand">
+                                    <Label
+                                        Text="{Binding Cstatus}"
+                                        Padding="5,3,5,3"
+                                        TextColor="White"
+                                        FontSize="13"
+                                        HorizontalOptions="End"
+                                        VerticalOptions="Start"
+                                        BackgroundColor="Orange">
+                                        <Label.Triggers>
+                                            <DataTrigger
+                                                TargetType="Label"
+                                                Binding="{Binding Cstatus}"
+                                                Value="Approved">
+                                                <Setter
+                                                    Property="BackgroundColor"
+                                                    Value="#3CB371" />
+                                            </DataTrigger>
+                                        </Label.Triggers>
+                                    </Label>
+                                    <Image
+                                        Source="right.png"
+                                        HorizontalOptions="End"
+                                        VerticalOptions="CenterAndExpand" />
+                                    <StackLayout
+                                        HorizontalOptions="End"
+                                        VerticalOptions="End"
+                                        Orientation="Horizontal">
+                                        <Label
+                                            Text="Deadline"
+                                            Style="{StaticResource NCListLabel}">
+                                            <Label.Triggers>
+                                                <DataTrigger
+                                                    TargetType="Label"
+                                                    Binding="{Binding IsPast}"
+                                                    Value="true">
+                                                    <Setter
+                                                        Property="TextColor"
+                                                        Value="Red" />
+                                                </DataTrigger>
+                                            </Label.Triggers>
+                                        </Label>
+                                        <Label
+                                            Text="{Binding Deadline}"
+                                            TextColor="SlateGray"
+                                            FontSize="Small"
+                                            VerticalOptions="End">
+                                            <Label.Triggers>
+                                                <DataTrigger
+                                                    TargetType="Label"
+                                                    Binding="{Binding IsPast}"
+                                                    Value="true">
+                                                    <Setter
+                                                        Property="TextColor"
+                                                        Value="Red" />
+                                                </DataTrigger>
+                                            </Label.Triggers>
+                                        </Label>
+                                    </StackLayout>
+                                </StackLayout>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage> 

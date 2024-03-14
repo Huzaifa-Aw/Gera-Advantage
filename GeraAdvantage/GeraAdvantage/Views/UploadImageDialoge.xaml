@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<pages:PopupPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
+    x:Class="GeraAdvantage.Views.UploadImageDialoge">
+    <StackLayout
+        Style="{StaticResource UDialogePage}">
+        <StackLayout
+            Style="{StaticResource UDialogeLayout}">
+            <Label
+                Text="Upload Image"
+                Style="{StaticResource UDialogeTitle}" />
+        </StackLayout>
+        <StackLayout
+            HeightRequest="100"
+            Orientation="Horizontal"
+            HorizontalOptions="FillAndExpand">
+            <Grid
+                ColumnDefinitions="*,*"
+                HorizontalOptions="FillAndExpand">
+                <StackLayout
+                    Grid.Column="0"
+                    HorizontalOptions="FillAndExpand"
+                    Orientation="Vertical">
+                    <Image
+                        Source="gallery.png"
+                        Style="{StaticResource UDialogeImage}" />
+                    <Label
+                        Text="Gallery"
+                        Style="{StaticResource UDialogeLabel}" />
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer
+                            Tapped="Gallery_Tapped" />
+                    </StackLayout.GestureRecognizers>
+                </StackLayout>
+                <StackLayout
+                    Grid.Column="1"
+                    HorizontalOptions="FillAndExpand"
+                    Orientation="Vertical">
+                    <Image
+                        Source="camera.png"
+                        Style="{StaticResource UDialogeImage}" />
+                    <Label
+                        Text="Camera"
+                        Style="{StaticResource UDialogeLabel}" />
+
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer
+                            Tapped="Camera_Tapped" />
+                    </StackLayout.GestureRecognizers>
+                </StackLayout>
+            </Grid>
+        </StackLayout>
+        <Image
+            Aspect="AspectFit"
+            x:Name="tempImage" />
+    </StackLayout>
+</pages:PopupPage>

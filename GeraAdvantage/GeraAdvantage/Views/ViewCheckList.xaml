@@ -1,0 +1,360 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="GeraAdvantage.Views.ViewCheckList"
+    Title="Create Checklist"
+    Style="{StaticResource ContentPageStyle}">
+    <NavigationPage.TitleView>
+        <StackLayout
+            Orientation="Horizontal"
+            VerticalOptions="CenterAndExpand"
+            Margin="0,0,10,0">
+            <Label
+                Text="Create Checklist"
+                FontSize="20"
+                TextColor="White"
+                VerticalOptions="CenterAndExpand"
+                VerticalTextAlignment="Center"
+                HorizontalOptions="StartAndExpand" />
+            <Button
+                x:Name="LCount"
+                TextColor="White"
+                BackgroundColor="Transparent"
+                HorizontalOptions="End"
+                WidthRequest="40"
+                CornerRadius="20"
+                BorderColor="White"
+                BorderWidth="2" />
+        </StackLayout>
+    </NavigationPage.TitleView>
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout
+                Margin="10"
+                Spacing="0">
+                <Label
+                    Style="{StaticResource QReviewTitle}"
+                    Text="Project Title" />
+                <Label
+                    Style="{StaticResource QReviewLabel}"
+                    Text="B-Bldg | Ground | BG02" />
+                <Label
+                    Style="{StaticResource QReviewLabel}"
+                    TextColor="DodgerBlue"
+                    Text="A/C Installation" />
+                <Label
+                    Style="{StaticResource QReviewLabel}"
+                    Text="Not Applicable |" />
+                <Grid
+                    ColumnDefinitions="*,*,*"
+                    HeightRequest="100">
+                    <Grid
+                        Grid.Column="0">
+
+                        <ImageButton
+                            Source="barrow.png"
+                            Style="{StaticResource BannerStyle}" />
+
+                        <Label
+                            x:Name="lblFirstBanner"
+                            Style="{StaticResource BannerLabel}" />
+
+                    </Grid>
+                    <Grid
+                        Grid.Column="1">
+
+                        <ImageButton
+                            Source="barrow.png"
+                            Style="{StaticResource BannerStyle}" />
+
+                        <Label
+                            x:Name="lblSecondBanner"
+                            Style="{StaticResource BannerLabel}" />
+
+                    </Grid>
+                    <Grid
+                        Grid.Column="2">
+
+                        <ImageButton
+                            Source="barrow.png"
+                            Style="{StaticResource BannerStyle}" />
+
+                        <Label
+                            x:Name="lblThirdBanner"
+                            Style="{StaticResource BannerLabel}" />
+
+                    </Grid>
+                </Grid>
+                <ListView
+                    x:Name="listView"
+                    HasUnevenRows="true"
+                    SeparatorColor="DarkGray"
+                    SelectionMode="None"
+                    ItemTapped="listView_ItemTapped"
+                    ItemsSource="{Binding _opsList}">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout
+                                    Padding="15,15,5,5"
+                                    Orientation="Horizontal"
+                                    HeightRequest="240"
+                                    VerticalOptions="FillAndExpand">
+                                    <StackLayout
+                                        HorizontalOptions="FillAndExpand"
+                                        VerticalOptions="FillAndExpand"
+                                        Orientation="Vertical">
+                                        <Label
+                                            Text="{Binding Title}"
+                                            FontSize="Medium"
+                                            VerticalOptions="Start"
+                                            TextColor="Black" />
+                                        <Grid
+                                            ColumnDefinitions="*,*,*,*"
+                                            HeightRequest="60"
+                                            VerticalOptions="CenterAndExpand"
+                                            HorizontalOptions="FillAndExpand"
+                                            MinimumHeightRequest="100"
+                                            IsVisible="{Binding isthree}">
+                                            <Button
+                                                x:Name="btnYes"
+                                                Grid.Column="0"
+                                                Text="Yes"
+                                                BackgroundColor="Green"
+                                                Clicked="Button_Clicked"
+                                                Style="{StaticResource CircularButton}">
+                                                <Button.Triggers>
+                                                    <DataTrigger
+                                                        TargetType="Button"
+                                                        Binding="{Binding btnYes}"
+                                                        Value="True">
+                                                        <Setter
+                                                            Property="BorderColor"
+                                                            Value="DodgerBlue" />
+                                                    </DataTrigger>
+                                                    <DataTrigger
+                                                        TargetType="Button"
+                                                        Binding="{Binding btnYes}"
+                                                        Value="False">
+                                                        <Setter
+                                                            Property="BorderColor"
+                                                            Value="Transparent" />
+                                                    </DataTrigger>
+                                                </Button.Triggers>
+                                            </Button>
+
+                                            <Button
+                                                x:Name="btnNo"
+                                                Grid.Column="1"
+                                                Text="No"
+                                                BackgroundColor="Red"
+                                                Clicked="Button_Clicked"
+                                                Style="{StaticResource CircularButton}">
+                                                <Button.Triggers>
+                                                    <DataTrigger
+                                                        TargetType="Button"
+                                                        Binding="{Binding btnNo}"
+                                                        Value="True">
+                                                        <Setter
+                                                            Property="BorderColor"
+                                                            Value="DodgerBlue" />
+                                                    </DataTrigger>
+                                                    <DataTrigger
+                                                        TargetType="Button"
+                                                        Binding="{Binding btnNo}"
+                                                        Value="False">
+                                                        <Setter
+                                                            Property="BorderColor"
+                                                            Value="Transparent" />
+                                                    </DataTrigger>
+                                                </Button.Triggers>
+                                            </Button>
+
+                                            <Button
+                                                x:Name="btnNA1"
+                                                Grid.Column="2"
+                                                Text="NA"
+                                                BackgroundColor="Purple"
+                                                Clicked="Button_Clicked"
+                                                Style="{StaticResource CircularButton}">
+                                                <Button.Triggers>
+                                                    <DataTrigger
+                                                        TargetType="Button"
+                                                        Binding="{Binding btnNA}"
+                                                        Value="True">
+                                                        <Setter
+                                                            Property="BorderColor"
+                                                            Value="DodgerBlue" />
+                                                    </DataTrigger>
+                                                    <DataTrigger
+                                                        TargetType="Button"
+                                                        Binding="{Binding btnNA}"
+                                                        Value="False">
+                                                        <Setter
+                                                            Property="BorderColor"
+                                                            Value="Transparent" />
+                                                    </DataTrigger>
+                                                </Button.Triggers>
+                                            </Button>
+
+                                        </Grid>
+                                        <Grid
+                                            ColumnDefinitions="*,*,*,*"
+                                            HeightRequest="60"
+                                            VerticalOptions="CenterAndExpand"
+                                            HorizontalOptions="FillAndExpand"
+                                            MinimumHeightRequest="100"
+                                            IsVisible="{Binding isfour}">
+                                            <Button
+                                                x:Name="btnA"
+                                                Grid.Column="0"
+                                                Text="A"
+                                                BackgroundColor="Green"
+                                                Clicked="Button_Clicked"
+                                                Style="{StaticResource CircularButton}">
+                                                <Button.Triggers>
+                                                    <DataTrigger
+                                                        TargetType="Button"
+                                                        Binding="{Binding btnA}"
+                                                        Value="True">
+                                                        <Setter
+                                                            Property="BorderColor"
+                                                            Value="DodgerBlue" />
+                                                    </DataTrigger>
+                                                    <DataTrigger
+                                                        TargetType="Button"
+                                                        Binding="{Binding btnA}"
+                                                        Value="False">
+                                                        <Setter
+                                                            Property="BorderColor"
+                                                            Value="Transparent" />
+                                                    </DataTrigger>
+                                                </Button.Triggers>
+                                            </Button>
+
+                                            <Button
+                                                x:Name="btnAWC"
+                                                Grid.Column="1"
+                                                Text="AWC"
+                                                BackgroundColor="Orange"
+                                                Clicked="Button_Clicked"
+                                                Style="{StaticResource CircularButton}">
+                                                <Button.Triggers>
+                                                    <DataTrigger
+                                                        TargetType="Button"
+                                                        Binding="{Binding btnAWC}"
+                                                        Value="True">
+                                                        <Setter
+                                                            Property="BorderColor"
+                                                            Value="DodgerBlue" />
+                                                    </DataTrigger>
+                                                    <DataTrigger
+                                                        TargetType="Button"
+                                                        Binding="{Binding btnAWC}"
+                                                        Value="False">
+                                                        <Setter
+                                                            Property="BorderColor"
+                                                            Value="Transparent" />
+                                                    </DataTrigger>
+                                                </Button.Triggers>
+                                            </Button>
+                                            <Button
+                                                x:Name="btnR"
+                                                Grid.Column="2"
+                                                Text="R"
+                                                BackgroundColor="Red"
+                                                Clicked="Button_Clicked"
+                                                Style="{StaticResource CircularButton}">
+                                                <Button.Triggers>
+                                                    <DataTrigger
+                                                        TargetType="Button"
+                                                        Binding="{Binding btnR}"
+                                                        Value="True">
+                                                        <Setter
+                                                            Property="BorderColor"
+                                                            Value="DodgerBlue" />
+                                                    </DataTrigger>
+                                                    <DataTrigger
+                                                        TargetType="Button"
+                                                        Binding="{Binding btnR}"
+                                                        Value="False">
+                                                        <Setter
+                                                            Property="BorderColor"
+                                                            Value="Transparent" />
+                                                    </DataTrigger>
+                                                </Button.Triggers>
+                                            </Button>
+                                            <Button
+                                                x:Name="btnNA2"
+                                                Grid.Column="3"
+                                                Text="NA"
+                                                BackgroundColor="Purple"
+                                                Clicked="Button_Clicked"
+                                                Style="{StaticResource CircularButton}">
+                                                <Button.Triggers>
+                                                    <DataTrigger
+                                                        TargetType="Button"
+                                                        Binding="{Binding btnNA}"
+                                                        Value="True">
+                                                        <Setter
+                                                            Property="BorderColor"
+                                                            Value="DodgerBlue" />
+                                                    </DataTrigger>
+                                                    <DataTrigger
+                                                        TargetType="Button"
+                                                        Binding="{Binding btnNA}"
+                                                        Value="False">
+                                                        <Setter
+                                                            Property="BorderColor"
+                                                            Value="Transparent" />
+                                                    </DataTrigger>
+                                                </Button.Triggers>
+                                            </Button>
+                                        </Grid>
+                                        <StackLayout
+                                            Orientation="Vertical"
+                                            IsVisible="{Binding SEComment}">
+                                            <Label
+                                                Text="SE Comment"
+                                                TextColor="Black" />
+                                            <Entry
+                                                TextColor="Black" />
+                                        </StackLayout>
+                                        <StackLayout
+                                            Orientation="Vertical"
+                                            IsVisible="{Binding ConverttoNC}">
+                                            <Button
+                                                Text="ConverttoNC" />
+                                        </StackLayout>
+                                        <StackLayout
+                                            Orientation="Vertical"
+                                            HorizontalOptions="Start"
+                                            IsVisible="{Binding AddImage}">
+                                            <ImageButton
+                                                Source="camera.png"
+                                                Style="{StaticResource PhoneMailIcon}" />
+                                            <ListView
+                                                VerticalOptions="StartAndExpand"
+                                                HorizontalOptions="FillAndExpand"
+                                                x:Name="PicsGrid" />
+                                        </StackLayout>
+                                    </StackLayout>
+                                    
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+
+                <Button
+                    Text="Save And Next"
+                    HorizontalOptions="End"
+                    WidthRequest="180"
+                    CornerRadius="20"
+                    Margin="10"
+                    Clicked="BtnOK_Clicked" />
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

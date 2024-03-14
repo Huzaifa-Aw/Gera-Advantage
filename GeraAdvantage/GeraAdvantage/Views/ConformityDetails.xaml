@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="GeraAdvantage.Views.ConformityDetails"
+    Title="Project Title"
+    Style="{StaticResource ContentPageStyle}">
+    <ContentPage.Padding>
+        <OnPlatform
+            x:TypeArguments="Thickness">
+            <OnPlatform.Platforms>
+                <On
+                    Platform="iOS"
+                    Value="0, 20, 0, 20" />
+            </OnPlatform.Platforms>
+        </OnPlatform>
+    </ContentPage.Padding>
+    <ContentPage.Content>
+        <StackLayout
+            HorizontalOptions="FillAndExpand"
+            VerticalOptions="Start">
+            <StackLayout
+                HorizontalOptions="FillAndExpand"
+                VerticalOptions="StartAndExpand"
+                Margin="10,10,10,0">
+                <StackLayout
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="Start">
+                    <Label
+                        Text="Select Building"
+                        Style="{StaticResource ConformityLabel}" />
+                    <Grid>
+                        <Picker
+                            ItemsSource="{Binding SampleText}" />
+                        <Image
+                            Source="down.png"
+                            Style="{StaticResource downImgStyle}" />
+                    </Grid>
+                </StackLayout>
+                <StackLayout
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="Start">
+                    <Label
+                        Text="Select Status"
+                        Style="{StaticResource ConformityLabel}" />
+                    <Grid>
+                        <Picker
+                            ItemsSource="{Binding SampleText}" />
+                        <Image
+                            Source="down.png"
+                            Style="{StaticResource downImgStyle}" />
+                    </Grid>
+                </StackLayout>
+                <StackLayout
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="Start">
+                    <Label
+                        Text="Select Category"
+                        Style="{StaticResource ConformityLabel}" />
+                    <Grid>
+                        <Picker
+                            ItemsSource="{Binding SampleText}" />
+                        <Image
+                            Source="down.png"
+                            Style="{StaticResource downImgStyle}" />
+                    </Grid>
+                </StackLayout>
+            </StackLayout>
+
+            <StackLayout
+                HorizontalOptions="FillAndExpand"
+                Orientation="Horizontal"
+                VerticalOptions="End"
+                Margin="10"
+                Spacing="10">
+                <Button
+                    Text="Go"
+                    HorizontalOptions="FillAndExpand"
+                    Clicked="Button_Clicked" />
+                <Button
+                    HorizontalOptions="FillAndExpand"
+                    Text="View All"
+                    Clicked="Button_Clicked" />
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

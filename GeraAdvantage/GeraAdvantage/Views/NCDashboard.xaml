@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="GeraAdvantage.Views.NCDashboard"
+    Title="NC Dashboard"
+    Style="{StaticResource ContentPageStyle}">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem
+            Order="Primary"
+            IconImageSource="filter.png" 
+            Clicked="Filter_Clicked"/>
+        <ToolbarItem
+            IconImageSource="home.png"
+            Order="Primary" />
+    </ContentPage.ToolbarItems>
+    <ContentPage.Padding>
+        <OnPlatform
+            x:TypeArguments="Thickness">
+            <OnPlatform.Platforms>
+                <On
+                    Platform="iOS"
+                    Value="0, 20, 0, 20" />
+            </OnPlatform.Platforms>
+        </OnPlatform>
+    </ContentPage.Padding>
+    <ContentPage.Content>
+        <StackLayout
+            VerticalOptions="FillAndExpand"
+            HorizontalOptions="FillAndExpand"
+            Orientation="Vertical">
+            <Label
+                Text="Project Title"
+                VerticalOptions="Start"
+                FontSize="Large"
+                Margin="15,5,0,5"/>
+            <StackLayout
+                HeightRequest="1"
+                BackgroundColor="LightGray"
+                HorizontalOptions="FillAndExpand" />
+            <ScrollView
+                VerticalOptions="FillAndExpand">
+                <Grid
+                    VerticalOptions="StartAndExpand"
+                    HorizontalOptions="FillAndExpand"
+                    x:Name="DashboardGLayout"
+                    Margin="10"
+                    ColumnSpacing="10"
+                    RowSpacing ="10"/>
+            </ScrollView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

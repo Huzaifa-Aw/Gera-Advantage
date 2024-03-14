@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="GeraAdvantage.Views.ShowNCHistory"
+    Title="NC History"
+    Style="{StaticResource ContentPageStyle}">
+    <ContentPage.Content>
+        <ListView
+            x:Name="listView"
+            HasUnevenRows="true"
+            Style="{StaticResource ListviewStyle}"
+            BackgroundColor="White"
+            IsEnabled="False">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout
+                            Margin="12">
+                            <StackLayout
+                                HorizontalOptions="FillAndExpand"
+                                VerticalOptions="Start">
+                                <Frame
+                                    HorizontalOptions="FillAndExpand"
+                                    VerticalOptions="Start"
+                                    BorderColor="Black">
+                                    <StackLayout
+                                        HorizontalOptions="FillAndExpand"
+                                        VerticalOptions="Start">
+                                        <Grid
+                                            ColumnDefinitions="40*,60*"
+                                            HorizontalOptions="FillAndExpand">
+                                            <Label
+                                                Grid.Column="0"
+                                                Text="Status :"
+                                                Style="{StaticResource HistoryTLabel}" />
+                                            <Label
+                                                Grid.Column="1"
+                                                Text="{Binding Status}"
+                                                Style="{StaticResource HistoryTitleLabel}" />
+                                        </Grid>
+                                        <Grid
+                                            ColumnDefinitions="40*,60*"
+                                            HorizontalOptions="FillAndExpand">
+                                            <Label
+                                                Grid.Column="0"
+                                                Text="Comment :"
+                                                Style="{StaticResource HistoryGLabel}" />
+                                            <Label
+                                                Grid.Column="1"
+                                                Text="{Binding Comment}"
+                                                Style="{StaticResource HistoryBLabel}" />
+                                        </Grid>
+                                        <Grid
+                                            ColumnDefinitions="40*,60*"
+                                            HorizontalOptions="FillAndExpand">
+                                            <Label
+                                                Grid.Column="0"
+                                                Text="Updated by :"
+                                                Style="{StaticResource HistoryGLabel}" />
+                                            <Label
+                                                Grid.Column="1"
+                                                Text="{Binding UpdatedBy}"
+                                                Style="{StaticResource HistoryBLabel}" />
+                                        </Grid>
+                                        <Grid
+                                            ColumnDefinitions="40*,60*"
+                                            HorizontalOptions="FillAndExpand">
+                                            <Label
+                                                Grid.Column="0"
+                                                Text="Updated at :"
+                                                Style="{StaticResource HistoryGLabel}" />
+                                            <Label
+                                                Grid.Column="1"
+                                                Text="{Binding UpdatedAt}"
+                                                Style="{StaticResource HistoryBLabel}" />
+                                        </Grid>
+                                    </StackLayout>
+                                </Frame>
+                            </StackLayout>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+    </ContentPage.Content>
+</ContentPage>

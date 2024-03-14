@@ -1,0 +1,138 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="GeraAdvantage.Views.EditNCDetails"
+    Style="{StaticResource ContentPageStyle}">
+    <NavigationPage.TitleView>
+        <StackLayout
+            Orientation="Horizontal"
+            VerticalOptions="CenterAndExpand"
+            Margin="0,0,10,0">
+            <Label
+                Text="Edit NC Details"
+                Style="{StaticResource PageTitle}" />
+            <Button
+                Text="Save"
+                Style="{StaticResource BWTitleBtn}" />
+        </StackLayout>
+    </NavigationPage.TitleView>
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout
+                VerticalOptions="FillAndExpand"
+                HorizontalOptions="FillAndExpand"
+                Orientation="Vertical"
+                Margin="10"
+                Spacing="10">
+                <Grid
+                    ColumnDefinitions="40*,60*"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="Start">
+                    <Label
+                        Grid.Column="0"
+                        Text="Flat Number:"
+                        Style="{StaticResource EditNCLabel}" />
+                    <Grid
+                        Grid.Column="1">
+                        <Picker
+                            ItemsSource="{Binding SampleText}"
+                            FontSize="Default" />
+                        <Image
+                            Source="down.png"
+                            Style="{StaticResource downImgStyle}" />
+                    </Grid>
+                </Grid>
+                <Grid
+                    ColumnDefinitions="40*,60*"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="Start">
+                    <Label
+                        Grid.Column="0"
+                        Text="Category:"
+                        Style="{StaticResource EditNCLabel}" />
+                    <Grid
+                        Grid.Column="1">
+                        <Picker
+                            ItemsSource="{Binding SampleText}"
+                            FontSize="Default" />
+                        <Image
+                            Source="down.png"
+                            Style="{StaticResource downImgStyle}"/>
+                    </Grid>
+                </Grid>
+                <Grid
+                    ColumnDefinitions="40*,60*"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="Start">
+                    <Label
+                        Grid.Column="0"
+                        Text="Sub-Category:"
+                        Style="{StaticResource EditNCLabel}" />
+                    <Grid
+                        Grid.Column="1">
+                        <Picker
+                            ItemsSource="{Binding SampleText}"
+                            FontSize="Default" />
+                        <Image
+                            Source="down.png"
+                            Style="{StaticResource downImgStyle}" />
+                    </Grid>
+                </Grid>
+                <Grid
+                    ColumnDefinitions="40*,60*"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="Start">
+                    <Label
+                        Grid.Column="0"
+                        Text="Severity:"
+                        Style="{StaticResource EditNCLabel}" />
+                    <Grid
+                        Grid.Column="1">
+                        <Picker
+                            ItemsSource="{Binding SampleText}"
+                            FontSize="Default" />
+                        <Image
+                            Source="down.png"
+                            Style="{StaticResource downImgStyle}" />
+                    </Grid>
+                </Grid>
+                <Grid
+                    ColumnDefinitions="40*,60*"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="Start">
+                    <Label
+                        Grid.Column="0"
+                        Text="Responsible Engineer:"
+                        Style="{StaticResource EditNCLabel}" />
+                    <Grid
+                        Grid.Column="1">
+                        <Picker
+                            ItemsSource="{Binding SampleText}"
+                            FontSize="Default" />
+                        <Image
+                            Source="down.png"
+                            Style="{StaticResource downImgStyle}" />
+                    </Grid>
+                </Grid>
+                <Grid
+                    ColumnDefinitions="40*,60*"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="Start">
+                    <Label
+                        Grid.Column="0"
+                        Text="Assigned Contractor:"
+                        Style="{StaticResource EditNCLabel}" />
+                    <Grid
+                        Grid.Column="1">
+                        <Picker
+                            ItemsSource="{Binding SampleText}"
+                            FontSize="Default" />
+                        <Image
+                            Source="down.png"
+                            Style="{StaticResource downImgStyle}" />
+                    </Grid>
+                </Grid>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

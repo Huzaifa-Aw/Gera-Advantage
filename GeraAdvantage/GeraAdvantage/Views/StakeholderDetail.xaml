@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="GeraAdvantage.Views.StakeholderDetail"
+    Style="{StaticResource ContentPageStyle}">
+    <NavigationPage.TitleView>
+        <StackLayout
+            Orientation="Horizontal"
+            VerticalOptions="CenterAndExpand"
+            Margin="0,0,10,0">
+            <Label
+                x:Name="PageTitle"
+                Text="Stakeholder Name"
+                FontSize="20"
+                TextColor="White"
+                VerticalOptions="CenterAndExpand"
+                VerticalTextAlignment="Center"
+                HorizontalOptions="StartAndExpand" />
+            <Image
+                VerticalOptions="Center"
+                HorizontalOptions="End"
+                Source="edit.png"
+                x:Name="btnEdit">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer
+                        Tapped="btnEdit_Tapped" />
+                </Image.GestureRecognizers>
+            </Image>
+        </StackLayout>
+    </NavigationPage.TitleView>
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout
+                Margin="10"
+                Spacing="0">
+                <Image
+                    Source="noperson.png"
+                    Style="{StaticResource ProfileImage}"
+                    HorizontalOptions="Start" />
+                <StackLayout
+                    Style="{StaticResource SeperatorLine}" />
+                <Label
+                    Text="Designation"
+                    Style="{StaticResource ProfileLabel}" />
+                <Label
+                    Text="Accounts Personal"
+                    Style="{StaticResource ProfileBLabel}" />
+
+                <StackLayout
+                    Style="{StaticResource SeperatorLine}" />
+                <Label
+                    Text="Comapny Name"
+                    Style="{StaticResource ProfileLabel}" />
+
+                <Label
+                    Text="GDPL"
+                    Style="{StaticResource ProfileBLabel}" />
+
+                <StackLayout
+                    Style="{StaticResource SeperatorLine}" />
+                <Label
+                    Text="Project Name"
+                    Style="{StaticResource ProfileLabel}" />
+
+                <Label
+                    Text="Test - Project"
+                    Style="{StaticResource ProfileBLabel}" />
+
+                <StackLayout
+                    Style="{StaticResource SeperatorLine}" />
+                <Label
+                    Text="Category"
+                    Style="{StaticResource ProfileLabel}" />
+
+                <Label
+                    Text="-"
+                    Style="{StaticResource ProfileBLabel}" />
+                <StackLayout
+                    Style="{StaticResource SeperatorLine}" />
+                <Label
+                    Text="Contact Details"
+                    Style="{StaticResource ProfileLabel}" />
+
+                <StackLayout
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="Start"
+                    Orientation="Horizontal"
+                    Margin="0,5,0,5">
+                    <Label
+                        Text="91123456789"
+                        Style="{StaticResource ProfileBLabel}"
+                        HorizontalOptions="StartAndExpand"
+                        VerticalOptions="Center"
+                        x:Name="lblPhone" />
+                    <ImageButton
+                        Source="phone.png"
+                        Style="{StaticResource PhoneMailIcon}"
+                        Clicked="Phone_Clicked" />
+                </StackLayout>
+                <StackLayout
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="Start"
+                    Orientation="Horizontal"
+                    Margin="0,5,0,5">
+                    <Label
+                        Text="test@gmail.com"
+                        Style="{StaticResource ProfileBLabel}"
+                        HorizontalOptions="StartAndExpand"
+                        VerticalOptions="Center"
+                        x:Name="lblMail" />
+                    <ImageButton
+                        Source="mail.png"
+                        Style="{StaticResource PhoneMailIcon}"
+                        Clicked="Mail_Clicked" />
+                </StackLayout>
+                <StackLayout
+                    Style="{StaticResource SeperatorLine}" />
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

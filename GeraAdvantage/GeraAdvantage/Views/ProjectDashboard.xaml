@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:syncfusion="clr-namespace:Syncfusion.SfDataGrid.XForms;assembly=Syncfusion.SfDataGrid.XForms"
+    x:Class="GeraAdvantage.Views.ProjectDashboard"
+    Title="Project Dashboard"
+    Style="{StaticResource ContentPageStyle}">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout
+                Margin="10">
+                <Grid
+                    ColumnDefinitions="40*,60*"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="Start">
+                    <Label
+                        Grid.Column="0"
+                        Text="Select Category:"
+                        Style="{StaticResource ConformityLabel}"
+                        VerticalTextAlignment="Center" />
+                    <Grid
+                        Grid.Column="1">
+                        <Picker
+                            ItemsSource="{Binding SampleText}"
+                            FontSize="Default" />
+                        <Image
+                            Source="down.png"
+                            HorizontalOptions="End"
+                            Margin="5" />
+                    </Grid>
+                </Grid>
+                <Grid
+                    ColumnDefinitions="40*,60*"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="Start">
+                    <Label
+                        Grid.Column="0"
+                        Text="Select Category:"
+                        Style="{StaticResource ConformityLabel}"
+                        VerticalTextAlignment="Center" />
+                    <Grid
+                        Grid.Column="1">
+                        <Picker
+                            ItemsSource="{Binding SampleText}"
+                            FontSize="Default" />
+                        <Image
+                            Source="down.png"
+                            Style="{StaticResource downImgStyle}" />
+                    </Grid>
+                </Grid>
+                <Label
+                    Text="CONFORMITY"
+                    Style="{StaticResource DashboardTitle}" />
+                <StackLayout
+                    x:Name="ConformityChartLayout"
+                    VerticalOptions="Start" />
+                <syncfusion:SfDataGrid
+                    x:Name="ConformityGrid"
+                    HorizontalOptions="FillAndExpand"
+                    HeaderRowHeight="30"
+                    ColumnSizer="Star" />
+                <Label
+                    Text="NON CONFORMITY"
+                    Style="{StaticResource DashboardTitle}" />
+                <StackLayout
+                    x:Name="NonConformityChartLayout"
+                    VerticalOptions="Start" />
+                <syncfusion:SfDataGrid
+                    x:Name="NonConformityGrid"
+                    HorizontalOptions="FillAndExpand"
+                    HeaderRowHeight="30"
+                    ColumnSizer="Star" />
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="GeraAdvantage.Views.SnaglistRoomSelection"
+    Title="Create Snaglist"
+    Style="{StaticResource ContentPageStyle}">
+    <ContentPage.Padding>
+        <OnPlatform
+            x:TypeArguments="Thickness">
+            <OnPlatform.Platforms>
+                <On
+                    Platform="iOS"
+                    Value="0, 20, 0, 20" />
+            </OnPlatform.Platforms>
+        </OnPlatform>
+    </ContentPage.Padding>
+    <ContentPage.Content>
+        <StackLayout
+            HorizontalOptions="FillAndExpand"
+            VerticalOptions="FillAndExpand">
+            <ScrollView>
+                <StackLayout
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="StartAndExpand"
+                    Margin="10,0,10,0">
+                    <StackLayout
+                        HorizontalOptions="StartAndExpand"
+                        VerticalOptions="CenterAndExpand"
+                        Orientation="Horizontal">
+                        <Label
+                            Text="{Binding ProjectName}"
+                            Style="{StaticResource SnaglistLabel}" />
+                        <Label
+                            Text="{Binding Building}"
+                            Style="{StaticResource SnaglistLabel}" />
+                        <Label
+                            Text="{Binding Floor}"
+                            Style="{StaticResource SnaglistLabel}" />
+                    </StackLayout>
+                    <StackLayout
+                        HorizontalOptions="StartAndExpand"
+                        VerticalOptions="CenterAndExpand"
+                        Orientation="Horizontal">
+                        <Label
+                            Text="{Binding UnitType}"
+                            Style="{StaticResource SnaglistLabel}" />
+                        <Label
+                            Text="{Binding UnitNo}"
+                            Style="{StaticResource SnaglistLabel}" />
+                       
+                    </StackLayout>
+                    <StackLayout
+                        Style="{StaticResource DialogePage}">
+                        <Label
+                            Text="Select Room"
+                            Style="{StaticResource DialogeTitle}" />
+                    </StackLayout>
+                    <!--<StackLayout
+                        Orientation="Horizontal"
+                        HorizontalOptions="FillAndExpand">
+                        <Entry
+                            x:Name="EntSearch"
+                            Placeholder="enter search text."
+                            Style="{StaticResource DialogeEntry}"
+                            ClearButtonVisibility="WhileEditing" />
+                        <ImageButton
+                            Source="bsearch.png"
+                            Style="{StaticResource DialogeImage}"
+                            Clicked="Search_Clicked" />
+                    </StackLayout>-->
+                    <ListView
+                        x:Name="listView"
+                        Style="{StaticResource ListviewStyle}"
+                        BackgroundColor="White"
+                        SelectionMode="None"
+                        VerticalOptions="Start"
+                        ItemTapped="listView_ItemTapped">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell
+                                    Height="50">
+                                    <StackLayout
+                                        HorizontalOptions="FillAndExpand"
+                                        VerticalOptions="Start"
+                                        Orientation="Horizontal">
+                                        <Label
+                                        Text="{Binding Title}"
+                                        Style="{StaticResource DialogeListLabel}"
+                                            />
+                                        <Button 
+                                            Text="Open"
+                                            HorizontalOptions="End"
+                                            Clicked="OpenButton_Clicked"/>
+
+                                    </StackLayout>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </StackLayout>
+            </ScrollView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

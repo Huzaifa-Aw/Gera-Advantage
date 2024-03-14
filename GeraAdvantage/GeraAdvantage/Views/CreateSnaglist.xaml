@@ -1,0 +1,120 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="GeraAdvantage.Views.CreateSnaglist"
+    Title="Create Snaglist"
+    Style="{StaticResource ContentPageStyle}">
+    <ContentPage.Padding>
+        <OnPlatform
+            x:TypeArguments="Thickness">
+            <OnPlatform.Platforms>
+                <On
+                    Platform="iOS"
+                    Value="0, 20, 0, 20" />
+            </OnPlatform.Platforms>
+        </OnPlatform>
+    </ContentPage.Padding>
+    <ContentPage.Content>
+        <StackLayout
+            HorizontalOptions="FillAndExpand"
+            VerticalOptions="FillAndExpand">
+            <ScrollView>
+                <StackLayout
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="StartAndExpand"
+                    Margin="10,0,10,0">
+                    <StackLayout
+                        HorizontalOptions="FillAndExpand"
+                        VerticalOptions="Start"
+                        Orientation="Horizontal">
+                        <Label
+                            Text="Project Title"
+                            Style="{StaticResource CreateChecklistTitle}" />
+                    </StackLayout>
+                    <StackLayout
+                        HorizontalOptions="FillAndExpand"
+                        VerticalOptions="Start">
+                        <Label
+                            Text="Select Building"
+                            Style="{StaticResource ConformityLabel}" />
+                        <Grid>
+                            <Button
+                                Style="{StaticResource TButton}"
+                                Clicked="Building_Clicked" />
+                            <Entry
+                                Style="{StaticResource TEntry}"
+                                Text="{Binding BuildingPick}" />
+                            <Image
+                                Source="down.png"
+                                Style="{StaticResource downImgStyle}" />
+                        </Grid>
+                    </StackLayout>
+                    <StackLayout
+                        HorizontalOptions="FillAndExpand"
+                        VerticalOptions="Start">
+                        <Label
+                            Text="Select Floor Type"
+                            Style="{StaticResource ConformityLabel}" />
+                        <Grid>
+                            <Button
+                                Style="{StaticResource TButton}"
+                                Clicked="Floor_Clicked" />
+                            <Entry
+                                Style="{StaticResource TEntry}"
+                                Text="{Binding FloorPick}" />
+                            <Image
+                                Source="down.png"
+                                Style="{StaticResource downImgStyle}" />
+                        </Grid>
+                    </StackLayout>
+                    <StackLayout
+                        HorizontalOptions="FillAndExpand"
+                        VerticalOptions="Start">
+                        <Label
+                            Text="Select Unit Type"
+                            Style="{StaticResource ConformityLabel}" />
+                        <Grid>
+                            <Button
+                                Style="{StaticResource TButton}"
+                                Clicked="UnitType_Clicked" />
+                            <Entry
+                                Style="{StaticResource TEntry}"
+                                Text="{Binding UnitTypePick}" />
+                            <Image
+                                Source="down.png"
+                                Style="{StaticResource downImgStyle}" />
+                        </Grid>
+                    </StackLayout>
+                    <StackLayout
+                        HorizontalOptions="FillAndExpand"
+                        VerticalOptions="Start">
+                        <Label
+                            Text="Select Unit Number"
+                            Style="{StaticResource ConformityLabel}" />
+                        <Grid>
+                            <Button
+                                Style="{StaticResource TButton}"
+                                Clicked="UnitNumber_Clicked" />
+                            <Entry
+                                Style="{StaticResource TEntry}"
+                                Text="{Binding UnitNumberPick}" />
+                            <Image
+                                Source="down.png"
+                                Style="{StaticResource downImgStyle}" />
+                        </Grid>
+                    </StackLayout>
+                   
+                </StackLayout>
+            </ScrollView>
+            <StackLayout
+                HorizontalOptions="Center"
+                Orientation="Horizontal"
+                VerticalOptions="End"
+                Margin="0,10,0,10">
+                <Button
+                    Text="Select Room"
+                    Clicked="BtnSelectRoom_Clicked" />
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

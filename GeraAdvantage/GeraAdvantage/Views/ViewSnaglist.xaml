@@ -1,0 +1,212 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="GeraAdvantage.Views.ViewSnaglist"
+    Title="Create Checklist"
+    Style="{StaticResource ContentPageStyle}">
+    <NavigationPage.TitleView>
+        <StackLayout
+            Orientation="Horizontal"
+            VerticalOptions="CenterAndExpand"
+            Margin="0,0,10,0">
+            <Label
+                Text="Create Snaglist"
+                FontSize="20"
+                TextColor="White"
+                VerticalOptions="CenterAndExpand"
+                VerticalTextAlignment="Center"
+                HorizontalOptions="StartAndExpand" />
+            <Button
+                x:Name="LCount"
+                TextColor="White"
+                BackgroundColor="Transparent"
+                HorizontalOptions="End"
+                WidthRequest="40"
+                CornerRadius="20"
+                BorderColor="White"
+                BorderWidth="2" />
+        </StackLayout>
+    </NavigationPage.TitleView>
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout
+                Margin="10"
+                Spacing="5">
+                <StackLayout
+                    HorizontalOptions="StartAndExpand"
+                    VerticalOptions="CenterAndExpand"
+                    Orientation="Horizontal">
+                    <Label
+                        Text="{Binding ProjectName}"
+                        Style="{StaticResource SnaglistLabel}" />
+                    <Label
+                        Text="{Binding Building}"
+                        Style="{StaticResource SnaglistLabel}" />
+                    <Label
+                        Text="{Binding Floor}"
+                        Style="{StaticResource SnaglistLabel}" />
+                </StackLayout>
+                <StackLayout
+                    HorizontalOptions="StartAndExpand"
+                    VerticalOptions="CenterAndExpand"
+                    Orientation="Horizontal">
+                    <Label
+                        Text="{Binding UnitType}"
+                        Style="{StaticResource SnaglistLabel}" />
+                    <Label
+                        Text="{Binding UnitNo}"
+                        Style="{StaticResource SnaglistLabel}" />
+
+                </StackLayout>
+                <StackLayout
+                    HorizontalOptions="StartAndExpand"
+                    VerticalOptions="CenterAndExpand"
+                    Orientation="Horizontal">
+                    <Label
+                        Text="{Binding Room}"
+                        Style="{StaticResource SnaglistLabel}" />
+                </StackLayout>
+                <StackLayout
+                    HeightRequest="1"
+                    BackgroundColor="LightGray"
+                    HorizontalOptions="FillAndExpand" />
+                <StackLayout
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="Start">
+                    <Label
+                        Text="Select Category"
+                        Style="{StaticResource ConformityLabel}" />
+                    <Grid>
+                        <Button
+                            Style="{StaticResource TButton}"
+                            Clicked="Category_Clicked" />
+                        <Entry
+                            Style="{StaticResource TEntry}"
+                            Text="{Binding CategoryPick}" />
+                        <Image
+                            Source="down.png"
+                            Style="{StaticResource downImgStyle}" />
+                    </Grid>
+                </StackLayout>
+                <StackLayout
+                    HeightRequest="1"
+                    BackgroundColor="LightGray"
+                    HorizontalOptions="FillAndExpand" />
+                <StackLayout
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="CenterAndExpand"
+                    Orientation="Horizontal">
+                    <Label
+                        Text="{Binding Room}"
+                        Style="{StaticResource SnaglistLabel}" 
+                        HorizontalOptions="StartAndExpand"/>
+                    <StackLayout
+                        HorizontalOptions="FillAndExpand"
+                        VerticalOptions="End">
+                        <Label
+                            Text="Select Severity"
+                            Style="{StaticResource ConformityLabel}" />
+                        <Grid>
+
+                            <Button
+                                Style="{StaticResource TButton}"
+                                Clicked="Severity_Clicked" />
+                            <Entry
+                                Style="{StaticResource TEntry}"
+                                Text="{Binding SeverityPick}" />
+                            <Image
+                                Source="down.png"
+                                Style="{StaticResource downImgStyle}" />
+                        </Grid>
+                    </StackLayout>
+                </StackLayout>
+                <StackLayout
+                    HeightRequest="1"
+                    BackgroundColor="LightGray"
+                    HorizontalOptions="FillAndExpand" />
+                <ListView
+                    x:Name="listView"
+                    HasUnevenRows="true"
+                    SeparatorColor="DarkGray"
+                    SelectionMode="None"
+                    ItemTapped="listView_ItemTapped"
+                    ItemsSource="{Binding _opsList}">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout
+                                    Padding="15,15,5,5"
+                                    Orientation="Horizontal"
+                                    HeightRequest="100"
+                                    VerticalOptions="FillAndExpand">
+                                    <StackLayout
+                                        HorizontalOptions="FillAndExpand"
+                                        VerticalOptions="FillAndExpand"
+                                        Orientation="Vertical">
+                                        <StackLayout
+                                            Orientation="Horizontal"
+                                            HorizontalOptions="FillAndExpand"
+                                            VerticalOptions="StartAndExpand">
+                                            <Label
+                                                Text="{Binding Title}"
+                                                FontSize="Medium"
+                                                VerticalOptions="Start"
+                                                TextColor="Black"
+                                                HorizontalOptions="StartAndExpand" />
+                                            <StackLayout
+                                                HorizontalOptions="FillAndExpand"
+                                                VerticalOptions="End">
+                                                <Grid>
+                                                    <Button
+                                                        Style="{StaticResource TButton}"
+                                                        Clicked="ListSeverity_Clicked" />
+                                                    <Entry
+                                                        Style="{StaticResource TEntry}"
+                                                        Text="{Binding Severity}" />
+                                                    <Image
+                                                        Source="down.png"
+                                                        Style="{StaticResource downImgStyle}" />
+                                                </Grid>
+                                            </StackLayout>
+                                        </StackLayout>
+                                        <StackLayout
+                                            Orientation="Vertical"
+                                            HorizontalOptions="FillAndExpand"
+                                            VerticalOptions="End"
+                                            IsVisible="{Binding AddImage}">
+                                            <StackLayout
+                                                Orientation="Horizontal">
+                                                <ImageButton
+                                                    Source="camera.png"
+                                                    Style="{StaticResource PhoneMailIcon}" 
+                                                    HorizontalOptions="Start"/>
+                                                <Entry
+                                                    TextColor="Black"
+                                                    PlaceholderColor="Gray"
+                                                    Placeholder="Comment"
+                                                    HorizontalOptions="FillAndExpand" />
+                                            </StackLayout>
+                                            <!--<ListView
+                                                VerticalOptions="End"
+                                                HorizontalOptions="FillAndExpand"
+                                                x:Name="PicsGrid" />-->
+                                        </StackLayout>
+                                    </StackLayout>
+
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+
+                <Button
+                    Text="Save And Next"
+                    HorizontalOptions="End"
+                    WidthRequest="180"
+                    CornerRadius="20"
+                    Margin="10"
+                    Clicked="BtnOK_Clicked" />
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:chart="clr-namespace:Syncfusion.SfChart.XForms;assembly=Syncfusion.SfChart.XForms"
+    xmlns:sfPopup="clr-namespace:Syncfusion.XForms.PopupLayout;assembly=Syncfusion.SfPopupLayout.XForms"
+    x:Class="GeraAdvantage.Login_Page"
+    BackgroundColor="LightSkyBlue"
+    NavigationPage.HasNavigationBar="False">
+    <ContentPage.Padding>
+        <OnPlatform
+            x:TypeArguments="Thickness">
+            <OnPlatform.Platforms>
+                <On
+                    Platform="iOS"
+                    Value="0, 20, 0, 20" />
+            </OnPlatform.Platforms>
+        </OnPlatform>
+    </ContentPage.Padding>
+    <ContentPage.Content>
+
+        <StackLayout
+            HorizontalOptions="FillAndExpand"
+            VerticalOptions="FillAndExpand">
+
+            <StackLayout
+                HorizontalOptions="Center"
+                VerticalOptions="CenterAndExpand"
+                x:Name="WaitingDialog"
+                IsVisible="false">
+                <ActivityIndicator
+                    IsRunning="true"
+                    Color="DodgerBlue" />
+                <Label
+                    FontSize="20"
+                    Text="Synching Data..."
+                    TextColor="DodgerBlue"
+                    FontAttributes="Bold" />
+            </StackLayout>
+            <StackLayout
+                HorizontalOptions="FillAndExpand"
+                VerticalOptions="FillAndExpand"
+                x:Name="MainLayout">
+                <StackLayout
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="StartAndExpand"
+                    Margin="10,40,10,0">
+                    <StackLayout
+                        HorizontalOptions="FillAndExpand"
+                        VerticalOptions="Start"
+                        Orientation="Horizontal">
+                        <Image
+                            Source="user.png" />
+                        <Entry
+                            HorizontalOptions="FillAndExpand"
+                            Placeholder="Username"
+                            Text="{Binding Username}" />
+                    </StackLayout>
+                    <StackLayout
+                        HorizontalOptions="FillAndExpand"
+                        VerticalOptions="Start"
+                        Orientation="Horizontal">
+                        <Image
+                            Source="Password.png" />
+                        <Entry
+                            Placeholder="Password"
+                            HorizontalOptions="FillAndExpand"
+                            IsPassword="True"
+                            Text="{Binding Password}" />
+                    </StackLayout>
+                    <Button
+                        Text="LOGIN"
+                        TextColor="White"
+                        Margin="10"
+                        Clicked="btnlogin_Clicked" />
+
+
+                </StackLayout>
+                <StackLayout>
+                </StackLayout>
+                <StackLayout
+                    x:Name="ChartLayout" />
+                <StackLayout
+                    HorizontalOptions="FillAndExpand"
+                    Orientation="Horizontal"
+                    VerticalOptions="End">
+                    <Button
+                        HorizontalOptions="FillAndExpand"
+                        Text="Register"
+                        Margin="10"
+                        Command="{Binding RegisterCommand}" />
+                </StackLayout>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

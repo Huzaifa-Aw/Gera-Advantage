@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="GeraAdvantage.GeraProjects_Page"
+    Title="Gera Projects"
+    Style="{StaticResource ContentPageStyle}">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem
+            Order="Primary"
+            IconImageSource="notification.png"
+            Priority="0" />
+        <ToolbarItem
+            Text="My Profile"
+            Order="Secondary"
+            Priority="0"
+            Clicked="MyProfile_Clicked" />
+        <ToolbarItem
+            Text="Change Password"
+            Order="Secondary"
+            Priority="1" />
+        <ToolbarItem
+            Text="Logout"
+            Order="Secondary"
+            Priority="2"
+            Clicked="Logout_Clicked" />
+
+    </ContentPage.ToolbarItems>
+    <ContentPage.Padding>
+        <OnPlatform
+            x:TypeArguments="Thickness">
+            <OnPlatform.Platforms>
+                <On
+                    Platform="iOS"
+                    Value="0, 20, 0, 20" />
+            </OnPlatform.Platforms>
+        </OnPlatform>
+    </ContentPage.Padding>
+    <ContentPage.Content>
+        <StackLayout
+            VerticalOptions="FillAndExpand"
+            HorizontalOptions="FillAndExpand"
+            Orientation="Vertical">
+            <ScrollView
+                VerticalOptions="FillAndExpand">
+                <Grid
+                    VerticalOptions="StartAndExpand"
+                    HorizontalOptions="FillAndExpand"
+                    x:Name="projectsGLayout" />
+            </ScrollView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
+    
+    

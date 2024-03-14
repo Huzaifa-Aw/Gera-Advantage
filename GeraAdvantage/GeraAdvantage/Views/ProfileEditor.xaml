@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="GeraAdvantage.Views.ProfileEditor"
+    Style="{StaticResource ContentPageStyle}">
+    <NavigationPage.TitleView>
+        <StackLayout
+            Orientation="Horizontal"
+            VerticalOptions="CenterAndExpand"
+            Margin="0,0,10,0">
+            <Label
+                Text="My Profile"
+                Style="{StaticResource PageTitle}"/>
+            <Button
+                Text="Apply"
+                Style="{StaticResource BlWTitleBtn}"/>
+        </StackLayout>
+    </NavigationPage.TitleView>
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout
+                Margin="10"
+                Spacing="0">
+                <StackLayout
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="Start"
+                    Orientation="Horizontal">
+                    <Image
+                    Source="noperson.png"
+                        Style="{StaticResource ProfileImage}"/>
+                    <Entry 
+                        Placeholder="Username"
+                        Style="{StaticResource ProfileEntry}"
+                        />
+                </StackLayout>
+                <StackLayout
+                    Style="{StaticResource SeperatorLine}" />
+                <Label
+                    Text="Comapny Name"
+                    Style="{StaticResource ProfileLabel}"/>
+                <Entry
+                    Placeholder="enter company "
+                    Style="{StaticResource ProfileEntry}" />
+                <StackLayout
+                    Style="{StaticResource SeperatorLine}" />
+                <Label
+                    Text="Contact Details"
+                    Style="{StaticResource ProfileLabel}" />
+                <StackLayout
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="Start"
+                    Orientation="Horizontal"
+                    Margin="0,5,0,5">
+                    <Entry
+                        Placeholder="enter phone "
+                        Style="{StaticResource ProfileEntry}" />
+                    <ImageButton
+                        Source="phone.png"
+                        Style="{StaticResource PhoneMailIcon}" />
+                </StackLayout>
+                <StackLayout
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="Start"
+                    Orientation="Horizontal"
+                    Margin="0,5,0,5">
+                    <Entry
+                        Placeholder="enter phone "
+                        Style="{StaticResource ProfileEntry}"  />
+                    <ImageButton
+                        Source="mail.png"
+                        Style="{StaticResource PhoneMailIcon}" />
+                </StackLayout>
+                <StackLayout
+                    Style="{StaticResource SeperatorLine}" />
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

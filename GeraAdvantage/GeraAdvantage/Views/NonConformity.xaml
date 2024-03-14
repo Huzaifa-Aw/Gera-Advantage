@@ -1,0 +1,340 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="GeraAdvantage.Views.NonConformity"
+    Title="Non-Conformity"
+    Style="{StaticResource ContentPageStyle}">
+    <ContentPage.Padding>
+        <OnPlatform
+            x:TypeArguments="Thickness">
+            <OnPlatform.Platforms>
+                <On
+                    Platform="iOS"
+                    Value="0, 20, 0, 20" />
+            </OnPlatform.Platforms>
+        </OnPlatform>
+    </ContentPage.Padding>
+    <ContentPage.Content>
+        <StackLayout
+            HorizontalOptions="FillAndExpand"
+            VerticalOptions="FillAndExpand">
+            <ScrollView>
+                <StackLayout
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="StartAndExpand"
+                    Margin="10,10,10,0">
+                    <StackLayout
+                        HorizontalOptions="FillAndExpand"
+                        VerticalOptions="Start"
+                        Orientation="Horizontal">
+                        <CheckBox
+                            Style="{StaticResource Chkbox}"
+                            x:Name="IsPotentialChkBx" />
+                        <Label
+                            Text="Potential NC"
+                            Style="{StaticResource ConformityChkBXLabel}" />
+                    </StackLayout>
+                    <StackLayout
+                        HorizontalOptions="FillAndExpand"
+                        VerticalOptions="Start">
+                        <Label
+                            Text="Select Building"
+                            Style="{StaticResource ConformityLabel}" />
+                        <Grid>
+                            <Button
+                                Style="{StaticResource TButton}"
+                                Clicked="Building_Clicked" />
+                            <Entry
+                                Style="{StaticResource TEntry}"
+                                Text="{Binding BuildingPick}" />
+                            <Image
+                                Source="down.png"
+                                Style="{StaticResource downImgStyle}" />
+                        </Grid>
+                    </StackLayout>
+                    <StackLayout
+                        HorizontalOptions="FillAndExpand"
+                        VerticalOptions="Start">
+                        <Label
+                            Text="Select Floor"
+                            Style="{StaticResource ConformityLabel}" />
+                        <Grid>
+                            <Button
+                                Style="{StaticResource TButton}"
+                                Clicked="Floor_Clicked" />
+                            <Entry
+                                Style="{StaticResource TEntry}"
+                                Text="{Binding FloorPick}" />
+                            <Image
+                                Source="down.png"
+                                Style="{StaticResource downImgStyle}" />
+                        </Grid>
+                    </StackLayout>
+                    <StackLayout
+                        HorizontalOptions="FillAndExpand"
+                        VerticalOptions="Start">
+                        <Label
+                            Text="Select Flat Type"
+                            Style="{StaticResource ConformityLabel}" />
+                        <Grid>
+                            <Button
+                                Style="{StaticResource TButton}"
+                                Clicked="Flat_Clicked" />
+                            <Entry
+                                Style="{StaticResource TEntry}"
+                                Text="{Binding FlatTypePick}" />
+                            <Image
+                                Source="down.png"
+                                Style="{StaticResource downImgStyle}" />
+                        </Grid>
+                    </StackLayout>
+                    <StackLayout
+                        HorizontalOptions="FillAndExpand"
+                        VerticalOptions="Start">
+                        <Label
+                            Text="Select Flat Number"
+                            Style="{StaticResource ConformityLabel}" />
+                        <Grid>
+                            <Button
+                                Style="{StaticResource TButton}"
+                                Clicked="Flat_Clicked" />
+                            <Entry
+                                Style="{StaticResource TEntry}"
+                                Text="{Binding FlatTypePick}" />
+                            <Image
+                                Source="down.png"
+                                Style="{StaticResource downImgStyle}" />
+                        </Grid>
+                    </StackLayout>
+                    <StackLayout
+                        HorizontalOptions="FillAndExpand"
+                        VerticalOptions="Start">
+                        <Label
+                            Text="Select Room"
+                            Style="{StaticResource ConformityLabel}" />
+                        <Grid>
+                            <Button
+                                Style="{StaticResource TButton}"
+                                Clicked="Room_Clicked" />
+                            <Entry
+                                Style="{StaticResource TEntry}"
+                                Text="{Binding RoomPick}" />
+                            <Image
+                                Source="down.png"
+                                Style="{StaticResource downImgStyle}" />
+                        </Grid>
+                    </StackLayout>
+                    <StackLayout
+                        HorizontalOptions="FillAndExpand"
+                        VerticalOptions="Start">
+                        <Label
+                            Text="Select Category"
+                            Style="{StaticResource ConformityLabel}" />
+                        <Grid>
+                            <Button
+                                Style="{StaticResource TButton}"
+                                Clicked="Category_Clicked" />
+                            <Entry
+                                Style="{StaticResource TEntry}"
+                                Text="{Binding CategoryPick}" />
+                            <Image
+                                Source="down.png"
+                                Style="{StaticResource downImgStyle}" />
+                        </Grid>
+                    </StackLayout>
+                    <StackLayout
+                        HorizontalOptions="FillAndExpand"
+                        VerticalOptions="Start">
+                        <Label
+                            Text="Select Sub-Category"
+                            Style="{StaticResource ConformityLabel}" />
+                        <Grid>
+                            <Button
+                                Style="{StaticResource TButton}"
+                                Clicked="SubCategory_Clicked" />
+                            <Entry
+                                Style="{StaticResource TEntry}"
+                                Text="{Binding SubCategoryPick}" />
+                            <Image
+                                Source="down.png"
+                                Style="{StaticResource downImgStyle}" />
+                        </Grid>
+                    </StackLayout>
+                    <StackLayout
+                        HorizontalOptions="FillAndExpand"
+                        VerticalOptions="Start">
+                        <Label
+                            Text="Select Root Cause"
+                            Style="{StaticResource ConformityLabel}" />
+                        <Grid>
+
+                            <Button
+                                Style="{StaticResource TButton}"
+                                Clicked="RootCause_Clicked" />
+                            <Entry
+                                Style="{StaticResource TEntry}"
+                                Text="{Binding RootCausePick}" />
+                            <Image
+                                Source="down.png"
+                                Style="{StaticResource downImgStyle}" />
+                        </Grid>
+                    </StackLayout>
+                    <StackLayout
+                        HorizontalOptions="FillAndExpand"
+                        VerticalOptions="Start">
+                        <Label
+                            Text="Proposed Severity"
+                            Style="{StaticResource ConformityLabel}" />
+                        <Grid>
+
+                            <Button
+                                Style="{StaticResource TButton}"
+                                Clicked="ProposedSeverity_Clicked" />
+                            <Entry
+                                Style="{StaticResource TEntry}"
+                                Text="{Binding ProposedSeverityPick}" />
+                            <Image
+                                Source="down.png"
+                                Style="{StaticResource downImgStyle}" />
+                        </Grid>
+                    </StackLayout>
+                    <StackLayout
+                        HorizontalOptions="FillAndExpand"
+                        VerticalOptions="Start">
+                        <Label
+                            Text="Select Severity"
+                            Style="{StaticResource ConformityLabel}" />
+                        <Grid>
+
+                            <Button
+                                Style="{StaticResource TButton}"
+                                Clicked="Severity_Clicked" />
+                            <Entry
+                                Style="{StaticResource TEntry}"
+                                Text="{Binding SeverityPick}" />
+                            <Image
+                                Source="down.png"
+                                Style="{StaticResource downImgStyle}" />
+                        </Grid>
+                    </StackLayout>
+                    <StackLayout
+                        HorizontalOptions="FillAndExpand"
+                        VerticalOptions="Start">
+                        <Label
+                            Text="Assign Contractor"
+                            Style="{StaticResource ConformityLabel}" />
+                        <Grid>
+
+                            <Button
+                                Style="{StaticResource TButton}"
+                                Clicked="Contractor_Clicked" />
+                            <Entry
+                                Style="{StaticResource TEntry}"
+                                Text="{Binding ContractorPick}" />
+                            <Image
+                                Source="down.png"
+                                Style="{StaticResource downImgStyle}" />
+                        </Grid>
+                    </StackLayout>
+                    <StackLayout
+                        HorizontalOptions="FillAndExpand"
+                        VerticalOptions="Start">
+                        <Label
+                            Text="Select Responsible Engineer"
+                            Style="{StaticResource ConformityLabel}" />
+                        <Grid>
+
+                            <Button
+                                Style="{StaticResource TButton}"
+                                Clicked="Resposible_Clicked" />
+                            <Entry
+                                Style="{StaticResource TEntry}"
+                                Text="{Binding ResponsiblePick}" />
+                            <Image
+                                Source="down.png"
+                                Style="{StaticResource downImgStyle}" />
+                        </Grid>
+                    </StackLayout>
+                    <StackLayout
+                        HorizontalOptions="FillAndExpand"
+                        VerticalOptions="Start">
+                        <Label
+                            Text="Contractor Company Name"
+                            Style="{StaticResource ConformityLabel}" />
+                        <Label
+                            Text="Gera"
+                            FontSize="Default"
+                            TextColor="Black" />
+                    </StackLayout>
+                    <StackLayout
+                        Margin="0,10,0,0"
+                        HorizontalOptions="FillAndExpand"
+                        VerticalOptions="Start">
+                        <Label
+                            Text="NC Comment"
+                            Style="{StaticResource ConformityLabel}" />
+                        <Entry
+                            x:Name="CommentEnt"
+                            HorizontalOptions="FillAndExpand"
+                            Placeholder="Add comment if any"
+                            Style="{StaticResource ConformityEntry}" />
+
+                    </StackLayout>
+                    <StackLayout
+                        Margin="0,10,0,0"
+                        HorizontalOptions="FillAndExpand"
+                        VerticalOptions="Start">
+                        <Label
+                            Text="Corrective Action"
+                            Style="{StaticResource ConformityLabel}" />
+
+                        <Entry
+                            x:Name="CorrectiveActionEnt"
+                            HorizontalOptions="FillAndExpand"
+                            Placeholder="Add Corrective Action if any"
+                            Style="{StaticResource ConformityEntry}" />
+                    </StackLayout>
+                    <StackLayout
+                        Margin="0,10,0,0"
+                        HorizontalOptions="FillAndExpand"
+                        VerticalOptions="Start">
+                        <Label
+                            Text="Preventive Action"
+                            Style="{StaticResource ConformityLabel}" />
+
+                        <Entry
+                            x:Name="PreventiceActionEnt"
+                            HorizontalOptions="FillAndExpand"
+                            Placeholder="Add Preventice Action if any"
+                            Style="{StaticResource ConformityEntry}" />
+
+                    </StackLayout>
+                    <StackLayout
+                        HorizontalOptions="Fill"
+                        VerticalOptions="End">
+                        <Image
+                            Aspect="AspectFit"
+                            x:Name="SelectedImage" />
+                    </StackLayout>
+                </StackLayout>
+
+            </ScrollView>
+            <StackLayout
+                HorizontalOptions="FillAndExpand"
+                Orientation="Horizontal"
+                VerticalOptions="End"
+                Margin="10"
+                Spacing="10">
+                <Button
+                    Text="Add Photo"
+                    HorizontalOptions="FillAndExpand"
+                    Clicked="Button_Clicked_1" />
+                <Button
+                    HorizontalOptions="FillAndExpand"
+                    Text="Save"
+                    Clicked="Save_Clicked" />
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

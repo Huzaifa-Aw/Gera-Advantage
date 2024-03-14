@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="GeraAdvantage.Views.StakeHoldersList"
+    Title="Stakeholders"
+    Style="{StaticResource ContentPageStyle}">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem
+            Order="Primary"
+            IconImageSource="search.png"
+            Clicked="Search_Clicked" />
+        <ToolbarItem
+            Order="Primary"
+            IconImageSource="home.png" />
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <StackLayout>
+            <Entry
+                x:Name="SearchEntry"
+                Placeholder="enter Name/Designation"
+                PlaceholderColor="Gray"
+                TextColor="Black"
+                IsVisible="false"
+                Margin="10,0,10,0" />
+            <ListView
+                x:Name="listView"
+                HasUnevenRows="true"
+                SeparatorColor="DarkGray"
+                SelectionMode="None"
+                ItemTapped="ListView_ItemTapped">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout
+                                Padding="15,15,5,5"
+                                Orientation="Horizontal">
+                                <Image
+                                    Source="noperson.png"
+                                    Style="{StaticResource ListIcon}" />
+                                <StackLayout
+                                    HorizontalOptions="StartAndExpand"
+                                    VerticalOptions="CenterAndExpand"
+                                    Orientation="Vertical"
+                                    Spacing="0">
+                                    <Label
+                                        Text="{Binding Name}"
+                                        Style="{StaticResource ProfListHeading}" />
+                                    <Label
+                                        Text="{Binding Designation}"
+                                        Style="{StaticResource ProfListSubHeading}" />
+                                </StackLayout>
+                                <StackLayout
+                                    Padding="0,15,0,0"
+                                    HorizontalOptions="End"
+                                    VerticalOptions="FillAndExpand">
+                                    <Image
+                                        Source="right.png"
+                                        Style="{StaticResource rightImgStyle}" />
+                                </StackLayout>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage> 

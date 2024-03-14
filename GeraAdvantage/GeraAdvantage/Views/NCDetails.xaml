@@ -1,0 +1,374 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="GeraAdvantage.Views.NCDetails"
+    Title="NC Details"
+    Style="{StaticResource ContentPageStyle}">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem
+            Order="Primary"
+            IconImageSource="edit.png"
+            Priority="0"
+            Clicked="EditNCDetails_Clicked" />
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <StackLayout
+            VerticalOptions="FillAndExpand"
+            HorizontalOptions="FillAndExpand"
+            Orientation="Vertical">
+            <ScrollView>
+                <StackLayout
+                    VerticalOptions="FillAndExpand"
+                    HorizontalOptions="FillAndExpand"
+                    Orientation="Vertical"
+                    Margin="10"
+                    Spacing="10">
+                    <Grid
+                        ColumnDefinitions="*,*"
+                        HorizontalOptions="FillAndExpand"
+                        VerticalOptions="StartAndExpand">
+                        <Label
+                            Grid.Column="0"
+                            Text="NC No"
+                            Style="{StaticResource NCDetailsLabel}" />
+                        <Label
+                            x:Name="NCNoEnt"
+                            Grid.Column="1"
+                            Style="{StaticResource NCDetailsTLabel}" />
+                    </Grid>
+                    <Grid
+                        ColumnDefinitions="*,*"
+                        HorizontalOptions="FillAndExpand"
+                        VerticalOptions="StartAndExpand">
+                        <Label
+                            Grid.Column="0"
+                            Text="Checklist No:"
+                            Style="{StaticResource NCDetailsLabel}" />
+                        <Label
+                            Grid.Column="1"
+                            x:Name="ChecklistNoEnt"
+                            Style="{StaticResource NCDetailsTLabel}" />
+                    </Grid>
+                    <Grid
+                        ColumnDefinitions="*,*"
+                        HorizontalOptions="FillAndExpand"
+                        VerticalOptions="StartAndExpand">
+                        <Label
+                            Grid.Column="0"
+                            Text="Building:"
+                            Style="{StaticResource NCDetailsLabel}" />
+                        <Label
+                            Grid.Column="1"
+                            x:Name="BuildingEnt"
+                            Style="{StaticResource NCDetailsTLabel}" />
+                    </Grid>
+                    <Grid
+                        ColumnDefinitions="*,*"
+                        HorizontalOptions="FillAndExpand"
+                        VerticalOptions="StartAndExpand">
+                        <Label
+                            Grid.Column="0"
+                            Text="Flat Type:"
+                            Style="{StaticResource NCDetailsLabel}" />
+                        <Label
+                            Grid.Column="1"
+                            x:Name="FlatTypeEnt"
+                            Style="{StaticResource NCDetailsTLabel}" />
+                    </Grid>
+                    <Grid
+                        ColumnDefinitions="*,*"
+                        HorizontalOptions="FillAndExpand"
+                        VerticalOptions="StartAndExpand">
+                        <Label
+                            Grid.Column="0"
+                            Text="Floor:"
+                            Style="{StaticResource NCDetailsLabel}" />
+                        <Label
+                            Grid.Column="1"
+                            x:Name="FloorEnt"
+                            Style="{StaticResource NCDetailsTLabel}" />
+                    </Grid>
+                    <Grid
+                        ColumnDefinitions="*,*"
+                        HorizontalOptions="FillAndExpand"
+                        VerticalOptions="StartAndExpand">
+                        <Label
+                            Grid.Column="0"
+                            Text="Flat No:"
+                            Style="{StaticResource NCDetailsLabel}" />
+                        <Label
+                            Grid.Column="1"
+                            x:Name="FlatNoEnt"
+                            Style="{StaticResource NCDetailsTLabel}" />
+                    </Grid>
+                    <Grid
+                        ColumnDefinitions="*,*"
+                        HorizontalOptions="FillAndExpand"
+                        VerticalOptions="StartAndExpand">
+                        <Label
+                            Grid.Column="0"
+                            Text="Room:"
+                            Style="{StaticResource NCDetailsLabel}" />
+                        <Label
+                            Grid.Column="1"
+                            x:Name="RoomEnt"
+                            Style="{StaticResource NCDetailsTLabel}" />
+                    </Grid>
+                    <Grid
+                        ColumnDefinitions="*,*"
+                        HorizontalOptions="FillAndExpand"
+                        VerticalOptions="StartAndExpand">
+                        <Label
+                            Grid.Column="0"
+                            Text="Category:"
+                            Style="{StaticResource NCDetailsLabel}" />
+                        <Label
+                            Grid.Column="1"
+                            x:Name="CategoryEnt"
+                            Style="{StaticResource NCDetailsTLabel}" />
+                    </Grid>
+                    <Grid
+                        ColumnDefinitions="*,*"
+                        HorizontalOptions="FillAndExpand"
+                        VerticalOptions="StartAndExpand">
+                        <Label
+                            Grid.Column="0"
+                            Text="Sub-Category:"
+                            Style="{StaticResource NCDetailsLabel}" />
+                        <Label
+                            Grid.Column="1"
+                            x:Name="SubCategoryEnt"
+                            Style="{StaticResource NCDetailsTLabel}" />
+                    </Grid>
+                    <Grid
+                        ColumnDefinitions="*,*"
+                        HorizontalOptions="FillAndExpand"
+                        VerticalOptions="StartAndExpand">
+                        <Label
+                            Grid.Column="0"
+                            Text="Root Cause:"
+                            Style="{StaticResource NCDetailsLabel}" />
+                        <Label
+                            Grid.Column="1"
+                            x:Name="RootCauseEnt"
+                            Style="{StaticResource NCDetailsTLabel}" />
+                    </Grid>
+                    <Grid
+                        ColumnDefinitions="*,*"
+                        HorizontalOptions="FillAndExpand"
+                        VerticalOptions="StartAndExpand">
+                        <Label
+                            Grid.Column="0"
+                            Text="Proposed Severity:"
+                            Style="{StaticResource NCDetailsLabel}" />
+                        <Label
+                            Grid.Column="1"
+                            x:Name="ProposedSeverityEnt"
+                            Style="{StaticResource NCDetailsTLabel}" />
+                    </Grid>
+                    <Grid
+                        ColumnDefinitions="*,*"
+                        HorizontalOptions="FillAndExpand"
+                        VerticalOptions="StartAndExpand">
+                        <Label
+                            Grid.Column="0"
+                            Text="Severity:"
+                            Style="{StaticResource NCDetailsLabel}" />
+                        <Label
+                            Grid.Column="1"
+                            x:Name="SeverityEnt"
+                            Style="{StaticResource NCDetailsTLabel}" />
+                    </Grid>
+                    <Grid
+                        ColumnDefinitions="*,*"
+                        HorizontalOptions="FillAndExpand"
+                        VerticalOptions="StartAndExpand">
+                        <Label
+                            Grid.Column="0"
+                            Text="Created Date:"
+                            Style="{StaticResource NCDetailsLabel}" />
+                        <Label
+                            Grid.Column="1"
+                            x:Name="CreatedDateEnt"
+                            Style="{StaticResource NCDetailsTLabel}" />
+                    </Grid>
+                    <Grid
+                        ColumnDefinitions="*,*"
+                        HorizontalOptions="FillAndExpand"
+                        VerticalOptions="StartAndExpand">
+                        <Label
+                            Grid.Column="0"
+                            Text="Deadline Date:"
+                            Style="{StaticResource NCDetailsLabel}" />
+                        <Label
+                            Grid.Column="1"
+                            x:Name="DeadlineDateEnt"
+                            Style="{StaticResource NCDetailsTLabel}" />
+                    </Grid>
+                    <Grid
+                        ColumnDefinitions="*,*"
+                        HorizontalOptions="FillAndExpand"
+                        VerticalOptions="StartAndExpand">
+                        <Label
+                            Grid.Column="0"
+                            Text="Assigned Contractor:"
+                            Style="{StaticResource NCDetailsLabel}" />
+                        <Label
+                            Grid.Column="1"
+                            x:Name="ContractorEnt"
+                            Style="{StaticResource NCDetailsTLabel}" />
+                    </Grid>
+                    <Grid
+                        ColumnDefinitions="*,*"
+                        HorizontalOptions="FillAndExpand"
+                        VerticalOptions="StartAndExpand">
+                        <Label
+                            Grid.Column="0"
+                            Text="Created By:"
+                            Style="{StaticResource NCDetailsLabel}" />
+                        <Label
+                            Grid.Column="1"
+                            x:Name="CreatedByEnt"
+                            Style="{StaticResource NCDetailsTLabel}" />
+                    </Grid>
+                    <Grid
+                        ColumnDefinitions="*,*"
+                        HorizontalOptions="FillAndExpand"
+                        VerticalOptions="StartAndExpand">
+                        <Label
+                            Grid.Column="0"
+                            Text="Updated By:"
+                            Style="{StaticResource NCDetailsLabel}" />
+                        <Label
+                            Grid.Column="1"
+                            x:Name="UpdatedByEnt"
+                            Style="{StaticResource NCDetailsTLabel}" />
+                    </Grid>
+                    <Grid
+                        ColumnDefinitions="*,*"
+                        HorizontalOptions="FillAndExpand"
+                        VerticalOptions="StartAndExpand">
+                        <Label
+                            Grid.Column="0"
+                            Text="Responsible Engineer:"
+                            Style="{StaticResource NCDetailsLabel}" />
+                        <Label
+                            Grid.Column="1"
+                            x:Name="EngineerEnt"
+                            Style="{StaticResource NCDetailsTLabel}" />
+                    </Grid>
+                    <StackLayout
+                        HeightRequest="1"
+                        BackgroundColor="LightGray"
+                        HorizontalOptions="FillAndExpand" />
+                    <Grid
+                        ColumnDefinitions="*,*"
+                        HorizontalOptions="FillAndExpand"
+                        VerticalOptions="StartAndExpand">
+                        <Label
+                            Grid.Column="0"
+                            Text="Contractor Status:"
+                            Style="{StaticResource NCDetailsLabel}" />
+                        <Label
+                            Grid.Column="1"
+                            Text="{Binding SampleText}"
+                            Style="{StaticResource NCDetailsTLabel}" />
+                    </Grid>
+                    <Grid
+                        ColumnDefinitions="*,*"
+                        HorizontalOptions="FillAndExpand"
+                        VerticalOptions="StartAndExpand">
+                        <Label
+                            Grid.Column="0"
+                            Text="NC Status:"
+                            Style="{StaticResource NCDetailsLabel}" />
+                        <Label
+                            Grid.Column="1"
+                            x:Name="NCStatusEnt"
+                            Style="{StaticResource NCDetailsTLabel}" />
+                    </Grid>
+                    <Button
+                        Text="Update"
+                        HorizontalOptions="End"
+                        Clicked="BtnUpdate_Clicked" />
+                    <StackLayout
+                        HeightRequest="1"
+                        BackgroundColor="LightGray"
+                        HorizontalOptions="FillAndExpand" />
+                    <Grid
+                        ColumnDefinitions="*,*"
+                        HorizontalOptions="FillAndExpand"
+                        VerticalOptions="StartAndExpand">
+                        <Label
+                            Grid.Column="0"
+                            Text="Corrective Action:"
+                            Style="{StaticResource NCDetailsLabel}" />
+                        <Label
+                            Grid.Column="1"
+                            x:Name="CorrectiveActionEnt"
+                            Style="{StaticResource NCDetailsTLabel}" />
+                    </Grid>
+                    <Grid
+                        ColumnDefinitions="*,*"
+                        HorizontalOptions="FillAndExpand"
+                        VerticalOptions="StartAndExpand">
+                        <Label
+                            Grid.Column="0"
+                            Text="Preventive Action:"
+                            Style="{StaticResource NCDetailsLabel}" />
+                        <Label
+                            Grid.Column="1"
+                            x:Name="PreventiveActionEnt"
+                            Style="{StaticResource NCDetailsTLabel}" />
+                    </Grid>
+                    <Grid>
+                        <Label
+                            Grid.Column="0"
+                            Text="Contractor's Comment:"
+                            Style="{StaticResource NCDetailsLabel}" />
+                        <Label
+                            Grid.Column="1"
+                            Text="{Binding SampleText}"
+                            Style="{StaticResource NCDetailsTLabel}" />
+                    </Grid>
+                    <Grid>
+                        <Label
+                            Grid.Column="0"
+                            Text="NC Comment:"
+                            Style="{StaticResource NCDetailsLabel}" />
+                        <Label
+                            Grid.Column="1"
+                            x:Name="NCCommentEnt"
+                            Style="{StaticResource NCDetailsTLabel}" />
+                    </Grid>
+                    <Entry
+                        Placeholder="Add Comment"
+                        Style="{StaticResource CommentEnt}"
+                        BackgroundColor="LightGray" />
+                    <Button
+                        Text="Show History"
+                        HorizontalOptions="End"
+                        Clicked="ShowHistory_Clicked" />
+                    <StackLayout
+                        HeightRequest="1"
+                        BackgroundColor="LightGray"
+                        HorizontalOptions="FillAndExpand" />
+                    <Grid
+                        ColumnDefinitions="*,*"
+                        HorizontalOptions="FillAndExpand"
+                        VerticalOptions="StartAndExpand"
+                        Margin="5,5,5,15">
+                        <Button
+                            Grid.Column="0"
+                            Text="Add Photo"
+                            Clicked="AddPhoto_Clicked" />
+                        <Button
+                            Grid.Column="1"
+                            Text="Save" />
+                    </Grid>
+                </StackLayout>
+            </ScrollView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

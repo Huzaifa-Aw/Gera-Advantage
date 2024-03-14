@@ -1,0 +1,357 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="GeraAdvantage.ProjectDetails_Page"
+    Title="Project Title"
+    Style="{StaticResource ContentPageStyle}">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem
+            Order="Primary"
+            IconImageSource="refresh.png"
+            Priority="0" />
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <StackLayout
+            VerticalOptions="FillAndExpand"
+            HorizontalOptions="FillAndExpand"
+            Orientation="Vertical">
+            <ListView
+                x:Name="listView"
+                Style="{StaticResource ListviewStyle}"
+                BackgroundColor="White"
+                SelectionMode="None"
+                VerticalOptions="Start"
+                SeparatorVisibility="None"
+                ItemTapped="listView_ItemTapped"
+                Margin="10,0,5,0">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell
+                            Height="60">
+                            <StackLayout
+                                VerticalOptions="FillAndExpand"
+                                HorizontalOptions="FillAndExpand"
+                                Orientation="Horizontal">
+                                <!--<StackLayout.GestureRecognizers>
+                                        <TapGestureRecognizer
+                                            Tapped="NCDashboard_Tapped" />
+                                    </StackLayout.GestureRecognizers>-->
+                                <Image
+                                    Source="checklist.png"
+                                    Style="{StaticResource ListIcon}" />
+                                <StackLayout
+                                    HorizontalOptions="StartAndExpand"
+                                    VerticalOptions="CenterAndExpand"
+                                    Orientation="Vertical"
+                                    Spacing="0">
+                                    <Label
+                                        Text="{Binding Title}"
+                                        Style="{StaticResource ListHeading}" />
+                                    <Label
+                                        Text="{Binding Title}"
+                                        Style="{StaticResource ListSubHeading}" />
+                                </StackLayout>
+                                <Image
+                                    Source="right.png"
+                                    Style="{StaticResource rightImgStyle}" />
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <ScrollView>
+                <Grid
+                    RowDefinitions="*,*,*,*,*,*,*,*,*"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="Start"
+                    Margin="10,0,5,0"
+                    RowSpacing="0">
+                    <!--<StackLayout
+                        Grid.Row="0"
+                        VerticalOptions="FillAndExpand"
+                        HorizontalOptions="FillAndExpand"
+                        Orientation="Horizontal">
+                        <StackLayout.GestureRecognizers>
+                            <TapGestureRecognizer
+                                Tapped="BtnChecklist_Tapped" />
+                        </StackLayout.GestureRecognizers>
+                        <Image
+                            Source="checklist.png"
+                            Style="{StaticResource ListIcon}" />
+                        <StackLayout
+                            HorizontalOptions="StartAndExpand"
+                            VerticalOptions="CenterAndExpand"
+                            Orientation="Vertical"
+                            Spacing="0">
+                            <Label
+                                Text="Checklist"
+                                Style="{StaticResource ListHeading}" />
+                            <Label
+                                Text="Checklist"
+                                Style="{StaticResource ListSubHeading}" />
+                        </StackLayout>
+                        <Image
+                            Source="right.png"
+                            Style="{StaticResource rightImgStyle}" />
+                    </StackLayout>-->
+                    <StackLayout
+                        Grid.Row="0"
+                        VerticalOptions="FillAndExpand"
+                        HorizontalOptions="FillAndExpand"
+                        Orientation="Horizontal">
+                        <StackLayout.GestureRecognizers>
+                            <TapGestureRecognizer
+                                Tapped="BtnCreateNC_Tapped" />
+                        </StackLayout.GestureRecognizers>
+                        <Image
+                            Source="pencil.png"
+                            Style="{StaticResource ListIcon}" />
+                        <StackLayout
+                            HorizontalOptions="StartAndExpand"
+                            VerticalOptions="CenterAndExpand"
+                            Orientation="Vertical"
+                            Spacing="0">
+                            <Label
+                                Text="Create NC/C"
+                                Style="{StaticResource ListHeading}" />
+                            <Label
+                                Text="Add new NC/C"
+                                Style="{StaticResource ListSubHeading}" />
+                        </StackLayout>
+                        <Image
+                            Source="right.png"
+                            Style="{StaticResource rightImgStyle}" />
+                    </StackLayout>
+                    <StackLayout
+                        Grid.Row="1"
+                        VerticalOptions="FillAndExpand"
+                        HorizontalOptions="FillAndExpand"
+                        Orientation="Horizontal">
+                        <StackLayout.GestureRecognizers>
+                            <TapGestureRecognizer
+                                Tapped="NCManagement_Tapped" />
+                        </StackLayout.GestureRecognizers>
+                        <Image
+                            Source="rotate.png"
+                            Style="{StaticResource ListIcon}" />
+                        <StackLayout
+                            HorizontalOptions="StartAndExpand"
+                            VerticalOptions="CenterAndExpand"
+                            Orientation="Vertical"
+                            Spacing="0">
+                            <Label
+                                Text="NC/C Management"
+                                Style="{StaticResource ListHeading}" />
+                            <Label
+                                Text="View and update existing NC/C"
+                                Style="{StaticResource ListSubHeading}" />
+                        </StackLayout>
+                        <Image
+                            Source="right.png"
+                            Style="{StaticResource rightImgStyle}" />
+                    </StackLayout>
+                    <StackLayout
+                        Grid.Row="2"
+                        VerticalOptions="FillAndExpand"
+                        HorizontalOptions="FillAndExpand"
+                        Orientation="Horizontal">
+                        <StackLayout.GestureRecognizers>
+                            <TapGestureRecognizer
+                                Tapped="NCDashboard_Tapped" />
+                        </StackLayout.GestureRecognizers>
+                        <Image
+                            Source="dashboard.png"
+                            Style="{StaticResource ListIcon}" />
+                        <StackLayout
+                            HorizontalOptions="StartAndExpand"
+                            VerticalOptions="CenterAndExpand"
+                            Orientation="Vertical"
+                            Spacing="0">
+                            <Label
+                                Text="NC Dashboard"
+                                Style="{StaticResource ListHeading}" />
+                            <Label
+                                Text="As per severity,status,root cause"
+                                Style="{StaticResource ListSubHeading}" />
+                        </StackLayout>
+                        <Image
+                            Source="right.png"
+                            Style="{StaticResource rightImgStyle}" />
+                    </StackLayout>
+                    <StackLayout
+                        Grid.Row="3"
+                        VerticalOptions="FillAndExpand"
+                        HorizontalOptions="FillAndExpand"
+                        Orientation="Horizontal">
+                        <StackLayout.GestureRecognizers>
+                            <TapGestureRecognizer
+                                Tapped="ConformityDashboard_Tapped" />
+                        </StackLayout.GestureRecognizers>
+                        <Image
+                            Source="dashboard.png"
+                            Style="{StaticResource ListIcon}" />
+                        <StackLayout
+                            HorizontalOptions="StartAndExpand"
+                            VerticalOptions="CenterAndExpand"
+                            Orientation="Vertical"
+                            Spacing="0">
+                            <Label
+                                Text="Conformity Dashboard"
+                                Style="{StaticResource ListHeading}" />
+                            <Label
+                                Text="As per status"
+                                Style="{StaticResource ListSubHeading}" />
+                        </StackLayout>
+                        <Image
+                            Source="right.png"
+                            Style="{StaticResource rightImgStyle}" />
+                    </StackLayout>
+                    <StackLayout
+                        Grid.Row="4"
+                        VerticalOptions="FillAndExpand"
+                        HorizontalOptions="FillAndExpand"
+                        Orientation="Horizontal">
+                        <StackLayout.GestureRecognizers>
+                            <TapGestureRecognizer
+                                Tapped="PotentialNCManagement_Tapped" />
+                        </StackLayout.GestureRecognizers>
+                        <Image
+                            Source="document.png"
+                            Style="{StaticResource ListIcon}" />
+                        <StackLayout
+                            HorizontalOptions="StartAndExpand"
+                            VerticalOptions="CenterAndExpand"
+                            Orientation="Vertical"
+                            Spacing="0">
+                            <Label
+                                Text="Potential NC Management"
+                                Style="{StaticResource ListHeading}" />
+                            <Label
+                                Text="view and update existing potential NC"
+                                Style="{StaticResource ListSubHeading}" />
+                        </StackLayout>
+                        <Image
+                            Source="right.png"
+                            Style="{StaticResource rightImgStyle}" />
+                    </StackLayout>
+                    <StackLayout
+                        Grid.Row="5"
+                        VerticalOptions="FillAndExpand"
+                        HorizontalOptions="FillAndExpand"
+                        Orientation="Horizontal">
+                        <StackLayout.GestureRecognizers>
+                            <TapGestureRecognizer
+                                Tapped="NCList_Tapped" />
+                        </StackLayout.GestureRecognizers>
+                        <Image
+                            Source="list.png"
+                            Style="{StaticResource ListIcon}" />
+                        <StackLayout
+                            HorizontalOptions="StartAndExpand"
+                            VerticalOptions="CenterAndExpand"
+                            Orientation="Vertical"
+                            Spacing="0">
+                            <Label
+                                Text="NC List"
+                                Style="{StaticResource ListHeading}" />
+                            <Label
+                                Text="As per building,category,contractor,creator"
+                                Style="{StaticResource ListSubHeading}" />
+                        </StackLayout>
+                        <Image
+                            Source="right.png"
+                            Style="{StaticResource rightImgStyle}" />
+                    </StackLayout>
+                    <StackLayout
+                        Grid.Row="6"
+                        VerticalOptions="FillAndExpand"
+                        HorizontalOptions="FillAndExpand"
+                        Orientation="Horizontal">
+                        <StackLayout.GestureRecognizers>
+                            <TapGestureRecognizer
+                                Tapped="StakeHolders_Tapped" />
+                        </StackLayout.GestureRecognizers>
+
+                        <Image
+                            Source="person.png"
+                            Style="{StaticResource ListIcon}" />
+                        <StackLayout
+                            HorizontalOptions="StartAndExpand"
+                            VerticalOptions="CenterAndExpand"
+                            Orientation="Vertical"
+                            Spacing="0">
+                            <Label
+                                Text="Stake Holders"
+                                Style="{StaticResource ListHeading}" />
+                            <Label
+                                Text="View list of project stakeholders"
+                                Style="{StaticResource ListSubHeading}" />
+                        </StackLayout>
+                        <Image
+                            Source="right.png"
+                            Style="{StaticResource rightImgStyle}" />
+                    </StackLayout>
+                    <StackLayout
+                        Grid.Row="7"
+                        VerticalOptions="FillAndExpand"
+                        HorizontalOptions="FillAndExpand"
+                        Orientation="Horizontal">
+                        <StackLayout.GestureRecognizers>
+                            <TapGestureRecognizer
+                                Tapped="ProjectDashboard_Tapped" />
+                        </StackLayout.GestureRecognizers>
+
+                        <Image
+                            Source="list.png"
+                            Style="{StaticResource ListIcon}" />
+                        <StackLayout
+                            HorizontalOptions="StartAndExpand"
+                            VerticalOptions="CenterAndExpand"
+                            Orientation="Vertical"
+                            Spacing="0">
+                            <Label
+                                Text="Project Dashboard"
+                                Style="{StaticResource ListHeading}" />
+                            <Label
+                                Text="View count of C as per Feedback and NC as per Severity"
+                                Style="{StaticResource ListSubHeading}" />
+                        </StackLayout>
+                        <Image
+                            Source="right.png"
+                            Style="{StaticResource rightImgStyle}" />
+                    </StackLayout>
+                    <StackLayout
+                        Grid.Row="8"
+                        VerticalOptions="FillAndExpand"
+                        HorizontalOptions="FillAndExpand"
+                        Orientation="Horizontal">
+                        <StackLayout.GestureRecognizers>
+                            <TapGestureRecognizer
+                                Tapped="TapGestureRecognizer_Tapped" />
+                        </StackLayout.GestureRecognizers>
+                        <Image
+                            Source="pdfdoc.png"
+                            Style="{StaticResource ListIcon}" />
+                        <StackLayout
+                            HorizontalOptions="StartAndExpand"
+                            VerticalOptions="CenterAndExpand"
+                            Orientation="Vertical"
+                            Spacing="0">
+                            <Label
+                                Text="Ready Reckoner"
+                                Style="{StaticResource ListHeading}" />
+                            <Label
+                                Text="View details of standard procedures"
+                                Style="{StaticResource ListSubHeading}" />
+                        </StackLayout>
+                        <Image
+                            Source="right.png"
+                            Style="{StaticResource rightImgStyle}" />
+                    </StackLayout>
+                </Grid>
+
+            </ScrollView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
